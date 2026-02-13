@@ -199,13 +199,13 @@ Simply open `index.html` in a modern web browser. No build server required for b
 **Projects Added:**
 
 1. **Al Thumama Aviation Club** (University Project)
-   - Image: `src/projects/Al Thumama Aviation Club.png`
+   - Image: `src/projects/Al Thumama Aviation Club.jpg`
    - Description: Aviation club design with modern facilities and training spaces
 2. **College of Architecture and Arts** (University Project)
-   - Image: `src/projects/College of Architecture and Arts.png`
+   - Image: `src/projects/College of Architecture and Arts.jpg`
    - Description: Educational campus design with flexible learning spaces
 3. **LucidAir** (Personal Project)
-   - Image: `src/projects/LucidAir.png`
+   - Image: `src/projects/LucidAir.jpg`
    - Description: Luxury automotive showroom concept
 
 **Modified:**

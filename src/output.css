@@ -1424,7 +1424,10 @@ html.lenis {
   -webkit-mask-image: linear-gradient( to right, transparent, black 10%, black 90%, transparent );
 }
 .ticker-track {
-  animation: ticker-scroll 3000ms linear infinite;
+  display: flex;
+  width: max-content;
+  padding-right: 3rem;
+  animation: ticker-scroll 15s linear infinite;
   will-change: transform;
 }
 .ticker-container:hover .ticker-track {

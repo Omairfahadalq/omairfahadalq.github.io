@@ -294,7 +294,7 @@ The website now has buttery-smooth, Framer-style scrolling throughout all sectio
 - Email: Omairalrooq@outlook.com
 - Phone: +966 532 101 058
 - Location: Riyadh, Saudi Arabia
-- LinkedIn: [Omair Al-Qahtani](https://linkedin.com)
+- LinkedIn: [Omair Al-Qahtani](https://www.linkedin.com/in/omair-alqahtani-18bb252a7/)
 
 ---
 

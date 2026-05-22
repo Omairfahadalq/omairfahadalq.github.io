@@ -94,37 +94,37 @@
         <!-- Project Preview Images Container -->
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none"
             id="hero-image-container" aria-hidden="true">
-            <div class="project-preview-image absolute w-[400px] h-[300px] md:w-[500px] md:h-[375px] opacity-0 transition-opacity duration-500"
+            <div class="project-preview-image absolute w-[380px] h-[280px] md:w-[480px] md:h-[360px] opacity-0 transition-opacity duration-500"
                 data-index="0" style="top: 15%; left: 10%;">
+                <img src="src/projects/Al-Murabba Orchestra-Featured.jpg"
+                    alt=""
+                    class="w-full h-full object-cover rounded-lg shadow-2xl"
+                    loading="lazy" decoding="async">
+            </div>
+            <div class="project-preview-image absolute w-[400px] h-[300px] md:w-[500px] md:h-[375px] opacity-0 transition-opacity duration-500"
+                data-index="1" style="top: 50%; right: 8%;">
                 <img src="src/projects/Al Thumama Aviation Club.jpg"
                     alt=""
                     class="w-full h-full object-cover rounded-lg shadow-2xl"
                     loading="lazy" decoding="async">
             </div>
             <div class="project-preview-image absolute w-[350px] h-[250px] md:w-[450px] md:h-[320px] opacity-0 transition-opacity duration-500"
-                data-index="1" style="top: 50%; right: 8%;">
+                data-index="2" style="bottom: 15%; left: 15%;">
                 <img src="src/projects/College of Architecture and Arts.jpg"
                     alt=""
                     class="w-full h-full object-cover rounded-lg shadow-2xl"
                     loading="lazy" decoding="async">
             </div>
             <div class="project-preview-image absolute w-[380px] h-[280px] md:w-[480px] md:h-[360px] opacity-0 transition-opacity duration-500"
-                data-index="2" style="bottom: 15%; left: 15%;">
+                data-index="3" style="top: 20%; right: 15%;">
                 <img src="src/projects/LucidAir.jpg"
                     alt=""
                     class="w-full h-full object-cover rounded-lg shadow-2xl"
                     loading="lazy" decoding="async">
             </div>
             <div class="project-preview-image absolute w-[400px] h-[300px] md:w-[500px] md:h-[375px] opacity-0 transition-opacity duration-500"
-                data-index="3" style="top: 20%; right: 15%;">
-                <img src="src/projects/majlis.jpeg"
-                    alt=""
-                    class="w-full h-full object-cover rounded-lg shadow-2xl"
-                    loading="lazy" decoding="async">
-            </div>
-            <div class="project-preview-image absolute w-[380px] h-[280px] md:w-[480px] md:h-[360px] opacity-0 transition-opacity duration-500"
                 data-index="4" style="bottom: 20%; right: 25%;">
-                <img src="src/projects/Al-Murabba Orchestra-Featured.jpg"
+                <img src="src/projects/majlis.jpeg"
                     alt=""
                     class="w-full h-full object-cover rounded-lg shadow-2xl"
                     loading="lazy" decoding="async">
@@ -506,7 +506,35 @@
             <!-- Projects Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
                 id="projects-grid">
-                <!-- Project 1: Al Thumama Aviation Club -->
+                <!-- Project 1: Al-Murabba Orchestra -->
+                <a href="al-murabba-orchestra.html" class="block group">
+                    <article
+                        class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
+                        data-category="University Project">
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <img src="src/projects/Al-Murabba Orchestra-Featured.jpg"
+                                alt="Al-Murabba Orchestra - Crystalline Architecture Design"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-6 md:p-8">
+                            <span
+                                class="text-xs text-white/40 uppercase tracking-wider mb-3 block">University
+                                Project</span>
+                            <h3
+                                class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
+                                Al-Murabba Orchestra</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">
+                                A groundbreaking cultural monument in New Murabba, Riyadh, featuring a 4,000-seat grand auditorium and a design inspired by the concept of "frozen music."
+                            </p>
+                        </div>
+                        <div
+                            class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300">
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Project 2: Al Thumama Aviation Club -->
                 <a href="al-thumama-aviation-club.html" class="block group">
                     <article
                         class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
@@ -534,7 +562,7 @@
                     </article>
                 </a>
 
-                <!-- Project 2: College of Architecture and Arts -->
+                <!-- Project 3: College of Architecture and Arts -->
                 <a href="college-architecture-arts.html" class="block group">
                     <article
                         class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
@@ -562,7 +590,7 @@
                     </article>
                 </a>
 
-                <!-- Project 3: LucidAir -->
+                <!-- Project 4: LucidAir -->
                 <a href="lucid-air.html" class="block group">
                     <article
                         class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
@@ -590,7 +618,7 @@
                     </article>
                 </a>
 
-                <!-- Project 4: Majlis -->
+                <!-- Project 5: Majlis -->
                 <a href="majlis.html" class="block group">
                     <article
                         class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
@@ -618,33 +646,7 @@
                     </article>
                 </a>
 
-                <!-- Project 5: Al-Murabba Orchestra -->
-                <a href="al-murabba-orchestra.html" class="block group">
-                    <article
-                        class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
-                        data-category="University Project">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="src/projects/Al-Murabba Orchestra-Featured.jpg"
-                                alt="Al-Murabba Orchestra - Crystalline Architecture Design"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                loading="lazy" decoding="async">
-                        </div>
-                        <div class="p-6 md:p-8">
-                            <span
-                                class="text-xs text-white/40 uppercase tracking-wider mb-3 block">University
-                                Project</span>
-                            <h3
-                                class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
-                                Al-Murabba Orchestra</h3>
-                            <p class="text-white/50 text-sm leading-relaxed">
-                                A groundbreaking cultural monument in New Murabba, Riyadh, featuring a 4,000-seat grand auditorium and a design inspired by the concept of "frozen music."
-                            </p>
-                        </div>
-                        <div
-                            class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300">
-                        </div>
-                    </article>
-                </a>
+
             </div>
 
             <!-- Future Projects Note -->

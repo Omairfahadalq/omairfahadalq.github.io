@@ -268,12 +268,6 @@
   .z-50 {
     z-index: 50;
   }
-  .col-1 {
-    grid-column: 1;
-  }
-  .col-2 {
-    grid-column: 2;
-  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -1086,6 +1080,11 @@
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
+    }
+  }
+  .md\:aspect-\[4\/3\] {
+    @media (width >= 48rem) {
+      aspect-ratio: 4/3;
     }
   }
   .md\:aspect-auto {

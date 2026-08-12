@@ -1,755 +1,1010 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfolio - Creative Designer & Architect">
-    <meta name="theme-color" content="#0f0f0f">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio - Creative Designer & Architect" />
+    <meta name="theme-color" content="#0f0f0f" />
     <title>Omair Al-Qahtani - Architect</title>
 
     <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="src/output.css" />
 
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
     <!-- Framer Motion -->
-    <script src="https://unpkg.com/motion@10.16.4/dist/motion.js"
-        defer></script>
+    <script
+      src="https://unpkg.com/motion@10.16.4/dist/motion.js"
+      defer></script>
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+  </head>
 
-<body class="bg-[#0f0f0f] text-white font-['Inter'] overflow-x-hidden">
-
+  <body class="bg-[#0f0f0f] text-white font-['Inter'] overflow-x-hidden">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-6 md:px-12 lg:px-20"
-        id="navbar" aria-label="Main navigation">
-        <div class="flex justify-between items-center">
-            <a href="#hero" class="flex items-center gap-3" aria-label="Home">
-                <!-- Logo Image -->
-                <img src="src/projects/Logo.png" width="100" height="100" alt="Omair Logo"
-                    class="object-contain"
-                    style="filter: invert(1);">
-            </a>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#about"
-                    class="text-sm text-white/70 hover:text-white transition-colors duration-300">About</a>
-                <a href="#experience"
-                    class="text-sm text-white/70 hover:text-white transition-colors duration-300">Experience</a>
-                <a href="#work"
-                    class="text-sm text-white/70 hover:text-white transition-colors duration-300">Work</a>
-                <a href="#contact"
-                    class="text-sm text-white/70 hover:text-white transition-colors duration-300">Contact</a>
-            </div>
-            <button class="md:hidden text-white" id="mobile-menu-btn"
-                aria-label="Toggle mobile menu">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+    <nav
+      class="fixed top-0 left-0 w-full z-50 px-6 py-6 md:px-12 lg:px-20"
+      id="navbar"
+      aria-label="Main navigation">
+      <div class="flex justify-between items-center">
+        <a href="#hero" class="flex items-center gap-3" aria-label="Home">
+          <!-- Logo Image -->
+          <img
+            src="src/projects/Logo.png"
+            width="100"
+            height="100"
+            alt="Omair Logo"
+            class="object-contain"
+            style="filter: invert(1)" />
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="#about"
+            class="text-sm text-white/70 hover:text-white transition-colors duration-300"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="text-sm text-white/70 hover:text-white transition-colors duration-300"
+            >Experience</a
+          >
+          <a
+            href="#work"
+            class="text-sm text-white/70 hover:text-white transition-colors duration-300"
+            >Work</a
+          >
+          <a
+            href="#contact"
+            class="text-sm text-white/70 hover:text-white transition-colors duration-300"
+            >Contact</a
+          >
         </div>
+        <button
+          class="md:hidden text-white"
+          id="mobile-menu-btn"
+          aria-label="Toggle mobile menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
 
-        <!-- Mobile Menu -->
-        <div class="fixed inset-0 bg-[#0f0f0f] z-50 hidden" id="mobile-menu"
-            role="dialog" aria-modal="true" aria-label="Mobile navigation">
-            <div class="flex flex-col h-full px-6 py-6">
-                <div class="flex justify-between items-center mb-12">
-                    <span class="sr-only">Omair</span>
-                    <!-- Compact logo for mobile menu -->
-                    <img src="src/projects/Logo.png" alt="Omair Logo"
-                        class="h-7 w-auto object-contain"
-                        style="filter: invert(1);">
-                    <button id="mobile-menu-close"
-                        aria-label="Close mobile menu">
-                        <i data-lucide="x" class="w-6 h-6"></i>
-                    </button>
-                </div>
-                <div class="flex flex-col gap-6">
-                    <a href="#about"
-                        class="text-2xl font-['Space_Grotesk'] mobile-nav-link">About</a>
-                    <a href="#experience"
-                        class="text-2xl font-['Space_Grotesk'] mobile-nav-link">Experience</a>
-                    <a href="#work"
-                        class="text-2xl font-['Space_Grotesk'] mobile-nav-link">Work</a>
-                    <a href="#contact"
-                        class="text-2xl font-['Space_Grotesk'] mobile-nav-link">Contact</a>
-                </div>
-            </div>
+      <!-- Mobile Menu -->
+      <div
+        class="fixed inset-0 bg-[#0f0f0f] z-50 hidden"
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation">
+        <div class="flex flex-col h-full px-6 py-6">
+          <div class="flex justify-between items-center mb-12">
+            <span class="sr-only">Omair</span>
+            <!-- Compact logo for mobile menu -->
+            <img
+              src="src/projects/Logo.png"
+              alt="Omair Logo"
+              class="h-7 w-auto object-contain"
+              style="filter: invert(1)" />
+            <button id="mobile-menu-close" aria-label="Close mobile menu">
+              <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+          </div>
+          <div class="flex flex-col gap-6">
+            <a
+              href="#about"
+              class="text-2xl font-['Space_Grotesk'] mobile-nav-link"
+              >About</a
+            >
+            <a
+              href="#experience"
+              class="text-2xl font-['Space_Grotesk'] mobile-nav-link"
+              >Experience</a
+            >
+            <a
+              href="#work"
+              class="text-2xl font-['Space_Grotesk'] mobile-nav-link"
+              >Work</a
+            >
+            <a
+              href="#contact"
+              class="text-2xl font-['Space_Grotesk'] mobile-nav-link"
+              >Contact</a
+            >
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero"
-        class="relative w-full h-screen flex items-center justify-center overflow-hidden"
-        aria-label="Hero">
-        <!-- Project Preview Images Container -->
-        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none"
-            id="hero-image-container" aria-hidden="true">
-            <div class="project-preview-image absolute w-[380px] h-[280px] md:w-[480px] md:h-[360px] opacity-0 transition-opacity duration-500"
-                data-index="0" style="top: 15%; left: 10%;">
-                <img src="src/projects/Al-Murabba Orchestra-Featured.jpg"
-                    alt=""
-                    class="w-full h-full object-cover rounded-lg shadow-2xl"
-                    loading="lazy" decoding="async">
-            </div>
-            <div class="project-preview-image absolute w-[400px] h-[300px] md:w-[500px] md:h-[375px] opacity-0 transition-opacity duration-500"
-                data-index="1" style="top: 50%; right: 8%;">
-                <img src="src/projects/Al Thumama Aviation Club.jpg"
-                    alt=""
-                    class="w-full h-full object-cover rounded-lg shadow-2xl"
-                    loading="lazy" decoding="async">
-            </div>
-            <div class="project-preview-image absolute w-[350px] h-[250px] md:w-[450px] md:h-[320px] opacity-0 transition-opacity duration-500"
-                data-index="2" style="bottom: 15%; left: 15%;">
-                <img src="src/projects/College of Architecture and Arts.jpg"
-                    alt=""
-                    class="w-full h-full object-cover rounded-lg shadow-2xl"
-                    loading="lazy" decoding="async">
-            </div>
-            <div class="project-preview-image absolute w-[380px] h-[280px] md:w-[480px] md:h-[360px] opacity-0 transition-opacity duration-500"
-                data-index="3" style="top: 20%; right: 15%;">
-                <img src="src/projects/LucidAir.jpg"
-                    alt=""
-                    class="w-full h-full object-cover rounded-lg shadow-2xl"
-                    loading="lazy" decoding="async">
-            </div>
-            <div class="project-preview-image absolute w-[400px] h-[300px] md:w-[500px] md:h-[375px] opacity-0 transition-opacity duration-500"
-                data-index="4" style="bottom: 20%; right: 25%;">
-                <img src="src/projects/majlis.jpeg"
-                    alt=""
-                    class="w-full h-full object-cover rounded-lg shadow-2xl"
-                    loading="lazy" decoding="async">
-            </div>
+    <section
+      id="hero"
+      class="relative w-full h-screen flex items-center justify-center overflow-hidden"
+      aria-label="Hero">
+      <!-- Project Preview Images Container -->
+      <div
+        class="absolute inset-0 z-0 overflow-hidden pointer-events-none"
+        id="hero-image-container"
+        aria-hidden="true">
+        <div
+          class="project-preview-image absolute w-[380px] h-[280px] md:w-[480px] md:h-[360px] opacity-0 transition-opacity duration-500"
+          data-index="0"
+          style="top: 15%; left: 10%">
+          <img
+            src="src/projects/Al-Murabba Orchestra-Featured.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-lg shadow-2xl"
+            loading="lazy"
+            decoding="async" />
         </div>
+        <div
+          class="project-preview-image absolute w-[400px] h-[300px] md:w-[500px] md:h-[375px] opacity-0 transition-opacity duration-500"
+          data-index="1"
+          style="top: 50%; right: 8%">
+          <img
+            src="src/projects/Al Thumama Aviation Club.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-lg shadow-2xl"
+            loading="lazy"
+            decoding="async" />
+        </div>
+        <div
+          class="project-preview-image absolute w-[350px] h-[250px] md:w-[450px] md:h-[320px] opacity-0 transition-opacity duration-500"
+          data-index="2"
+          style="bottom: 15%; left: 15%">
+          <img
+            src="src/projects/College of Architecture and Arts.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-lg shadow-2xl"
+            loading="lazy"
+            decoding="async" />
+        </div>
+        <div
+          class="project-preview-image absolute w-[380px] h-[280px] md:w-[480px] md:h-[360px] opacity-0 transition-opacity duration-500"
+          data-index="3"
+          style="top: 20%; right: 15%">
+          <img
+            src="src/projects/LucidAir.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-lg shadow-2xl"
+            loading="lazy"
+            decoding="async" />
+        </div>
+        <div
+          class="project-preview-image absolute w-[400px] h-[300px] md:w-[500px] md:h-[375px] opacity-0 transition-opacity duration-500"
+          data-index="4"
+          style="bottom: 20%; right: 25%">
+          <img
+            src="src/projects/majlis.jpeg"
+            alt=""
+            class="w-full h-full object-cover rounded-lg shadow-2xl"
+            loading="lazy"
+            decoding="async" />
+        </div>
+      </div>
 
-        <!-- Hero Content -->
-        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto"
-            id="hero-content">
-            <div class="overflow-hidden mb-4">
-                <h1 class="hero-title font-['Space_Grotesk'] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none"
-                    aria-label="Omair">
-                    OMAIR
-                </h1>
-            </div>
-            <div class="overflow-hidden">
-                <p class="hero-subtitle text-lg sm:text-xl md:text-2xl text-white/60 font-light tracking-wide"
-                    aria-label="Creative Designer & Architect">
-                    Architecture Graduate – BArch (2026)
-                </p>
-            </div>
+      <!-- Hero Content -->
+      <div
+        class="relative z-10 text-center px-6 max-w-5xl mx-auto"
+        id="hero-content">
+        <div class="overflow-hidden mb-4">
+          <h1
+            class="hero-title font-['Space_Grotesk'] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none"
+            aria-label="Omair">
+            OMAIR
+          </h1>
         </div>
+        <div class="overflow-hidden">
+          <p
+            class="hero-subtitle text-lg sm:text-xl md:text-2xl text-white/60 font-light tracking-wide"
+            aria-label="Creative Designer & Architect">
+            Architecture Graduate – BArch (2026)
+          </p>
+        </div>
+      </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 opacity-60"
-            id="scroll-indicator" aria-hidden="true">
-            <div
-                class="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
-                <div
-                    class="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce">
-                </div>
-            </div>
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 opacity-60"
+        id="scroll-indicator"
+        aria-hidden="true">
+        <div
+          class="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
+          <div
+            class="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
         </div>
+      </div>
     </section>
 
     <!-- About Me Section -->
-    <section id="about"
-        class="relative w-full min-h-screen py-24 md:py-32 px-6 md:px-12 lg:px-20"
-        aria-label="About Me">
-        <div class="max-w-7xl mx-auto">
+    <section
+      id="about"
+      class="relative w-full min-h-screen py-24 md:py-32 px-6 md:px-12 lg:px-20"
+      aria-label="About Me">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <!-- Left Column - Title -->
+          <div class="lg:sticky lg:top-32">
+            <span
+              class="text-sm text-white/40 uppercase tracking-widest mb-4 block"
+              >Introduction
+            </span>
+            <h2
+              class="about-title font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8">
+              About Me
+            </h2>
             <div
-                class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-                <!-- Left Column - Title -->
-                <div class="lg:sticky lg:top-32">
-                    <span
-                        class="text-sm text-white/40 uppercase tracking-widest mb-4 block">Introduction
-                    </span>
-                    <h2
-                        class="about-title font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8">
-                        About Me
-                    </h2>
-                    <div
-                        class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 text-sm text-white/70">
-                        <div>
-                            <span
-                                class="block font-semibold text-white">Address</span>
-                            <span>Riyadh, Saudi Arabia</span>
-                        </div>
-                        <div>
-                            <span
-                                class="block font-semibold text-white">Email</span>
-                            <a href="mailto:Omairalrooq@outlook.com"
-                                class="hover:text-white transition-colors">Omairalrooq@outlook.com</a>
-                        </div>
-                        <div>
-                            <span
-                                class="block font-semibold text-white">Phone</span>
-                            <a href="tel:+966532101058"
-                                class="hover:text-white transition-colors">+966 53 210 1058</a>
-                        </div>
-                        <div>
-                            <span
-                                class="block font-semibold text-white">LinkedIn</span>
-                            <a href="https://www.linkedin.com/in/omair-alqahtani-18bb252a7/" target="_blank"
-                                rel="noopener noreferrer"
-                                class="hover:text-white transition-colors">Omair
-                                Al-Qahtani</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column - Content -->
-                <div class="about-content">
-                    <p class="about-description text-lg md:text-xl text-white/70 leading-relaxed mb-12"
-                        id="about-text">
-                        Recent Architecture graduate (2026) from King Saud University, bridging technical design with real estate investment strategy. Demonstrates strong initiative through a self-initiated professional tenure at Al-Woasta Investment and Real Estate Development, alongside private architectural commissions and design contributions to KSU's Vision 2030 Student Club. A collaborative professional skilled in cross-functional coordination, problem-solving, and adaptability, eager to contribute to high-value projects aligned with Saudi Vision 2030.
-                    </p>
-
-                    <!-- Contact Buttons -->
-                    <div class="flex flex-wrap gap-4 mb-12">
-                        <a href="https://www.linkedin.com/in/omair-alqahtani-18bb252a7/" target="_blank"
-                            rel="noopener noreferrer"
-                            class="neon-button group inline-flex items-center gap-2 px-6 py-3 bg-[#000f26] rounded-full text-sm font-medium transition-all duration-300"
-                            aria-label="LinkedIn Profile">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i>
-                            <span>Omair Al-Qahtani</span>
-                        </a>
-                        <a href="mailto:Omairalrooq@outlook.com"
-                            class="neon-button group inline-flex items-center gap-2 px-6 py-3 bg-[#000f26] rounded-full text-sm font-medium transition-all duration-300"
-                            aria-label="Send Email">
-                            <i data-lucide="mail" class="w-4 h-4"></i>
-                            <span>Email</span>
-                        </a>
-                        <a href="tel:+966532101058"
-                            class="neon-button group inline-flex items-center gap-2 px-6 py-3 bg-[#000f26] rounded-full text-sm font-medium transition-all duration-300"
-                            aria-label="Call Phone">
-                            <i data-lucide="phone" class="w-4 h-4"></i>
-                            <span>+966 53 210 1058</span>
-                        </a>
-                    </div>
-
-                    <!-- Resume Download -->
-                    <a href="src/projects/Project-Portfolio.pdf" download
-                        class="neon-button-primary group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0f0f0f] rounded-full text-base font-semibold transition-all duration-300"
-                        aria-label="Download Resume">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        <span>Download Portfolio</span>
-                    </a>
-                </div>
+              class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 text-sm text-white/70">
+              <div>
+                <span class="block font-semibold text-white">Address</span>
+                <span>Riyadh, Saudi Arabia</span>
+              </div>
+              <div>
+                <span class="block font-semibold text-white">Email</span>
+                <a
+                  href="mailto:Omairalrooq@outlook.com"
+                  class="hover:text-white transition-colors"
+                  >Omairalrooq@outlook.com</a
+                >
+              </div>
+              <div>
+                <span class="block font-semibold text-white">Phone</span>
+                <a
+                  href="tel:+966532101058"
+                  class="hover:text-white transition-colors"
+                  >+966 53 210 1058</a
+                >
+              </div>
+              <div>
+                <span class="block font-semibold text-white">LinkedIn</span>
+                <a
+                  href="https://www.linkedin.com/in/omair-alqahtani-18bb252a7/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-white transition-colors"
+                  >Omair Al-Qahtani</a
+                >
+              </div>
             </div>
+          </div>
+
+          <!-- Right Column - Content -->
+          <div class="about-content">
+            <p
+              class="about-description text-lg md:text-xl text-white/70 leading-relaxed mb-12"
+              id="about-text">
+              Recent Architecture graduate (2026) from King Saud University,
+              bridging technical design with real estate investment strategy.
+              Demonstrates strong initiative through a self-initiated
+              professional tenure at Al-Woasta Investment and Real Estate
+              Development, alongside private architectural commissions and
+              design contributions to KSU's Vision 2030 Student Club. A
+              collaborative professional skilled in cross-functional
+              coordination, problem-solving, and adaptability, eager to
+              contribute to high-value projects aligned with Saudi Vision 2030.
+            </p>
+
+            <!-- Contact Buttons -->
+            <div class="flex flex-wrap gap-4 mb-12">
+              <a
+                href="https://www.linkedin.com/in/omair-alqahtani-18bb252a7/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="neon-button group inline-flex items-center gap-2 px-6 py-3 bg-[#000f26] rounded-full text-sm font-medium transition-all duration-300"
+                aria-label="LinkedIn Profile">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                <span>Omair Al-Qahtani</span>
+              </a>
+              <a
+                href="mailto:Omairalrooq@outlook.com"
+                class="neon-button group inline-flex items-center gap-2 px-6 py-3 bg-[#000f26] rounded-full text-sm font-medium transition-all duration-300"
+                aria-label="Send Email">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>Email</span>
+              </a>
+              <a
+                href="tel:+966532101058"
+                class="neon-button group inline-flex items-center gap-2 px-6 py-3 bg-[#000f26] rounded-full text-sm font-medium transition-all duration-300"
+                aria-label="Call Phone">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                <span>+966 53 210 1058</span>
+              </a>
+            </div>
+
+            <!-- Resume Download -->
+            <a
+              href="src/projects/Project-Portfolio.pdf"
+              download
+              class="neon-button-primary group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0f0f0f] rounded-full text-base font-semibold transition-all duration-300"
+              aria-label="Download Resume">
+              <i data-lucide="download" class="w-5 h-5"></i>
+              <span>Download Portfolio</span>
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Work Experience Section -->
-    <section id="experience"
-        class="relative w-full min-h-screen py-24 md:py-32 px-6 md:px-12 lg:px-20"
-        aria-label="Work Experience">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-                <!-- Left Column - Sticky Title -->
-                <div class="lg:sticky lg:top-32 lg:h-fit">
-                    <span
-                        class="text-sm text-white/40 uppercase tracking-widest mb-4 block">Career</span>
-                    <h2
-                        class="experience-title font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
-                        Work Experience
-                    </h2>
-                    <p class="text-white/50 text-lg max-w-md">
-                        A journey through my professional growth and the
-                        valuable experiences that shaped my design perspective.
-                    </p>
-                </div>
+    <section
+      id="experience"
+      class="relative w-full min-h-screen py-24 md:py-32 px-6 md:px-12 lg:px-20"
+      aria-label="Work Experience">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          <!-- Left Column - Sticky Title -->
+          <div class="lg:sticky lg:top-32 lg:h-fit">
+            <span
+              class="text-sm text-white/40 uppercase tracking-widest mb-4 block"
+              >Career</span
+            >
+            <h2
+              class="experience-title font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
+              Work Experience
+            </h2>
+            <p class="text-white/50 text-lg max-w-md">
+              A journey through my professional growth and the valuable
+              experiences that shaped my design perspective.
+            </p>
+          </div>
 
-                <!-- Right Column - Timeline -->
-                <div class="relative">
-                    <!-- Timeline Line -->
-                    <div class="absolute left-0 top-0 bottom-0 w-px bg-white/10"
-                        aria-hidden="true">
-                        <div class="timeline-progress absolute top-0 left-0 w-full bg-gradient-to-b from-white/60 to-white/20"
-                            id="timeline-line"></div>
-                    </div>
-
-                    <!-- Experience Items -->
-                    <div class="space-y-12 pl-8">
-                        <!-- Experience 1 -->
-                        <div class="experience-item relative" data-index="0">
-                            <div
-                                class="absolute -left-8 top-0 w-4 h-4 rounded-full bg-white/20 border border-white/40 experience-dot">
-                            </div>
-                            <div class="pb-8">
-                                <span
-                                    class="text-sm text-white/40 mb-2 block">Oct 2023 - Jun 2025</span>
-                                <h3
-                                    class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-1">
-                                    Real Estate Development & Architecture</h3>
-                                <p class="text-white/60 text-base mb-4">Al-Woasta for Investment and Real Estate Development</p>
-                                <ul class="text-white/50 text-sm leading-relaxed space-y-2 list-disc pl-4">
-                                    <li>Contributed to architectural planning and feasibility analysis of residential and commercial projects, optimizing investment value.</li>
-                                    <li>Coordinated design execution and stakeholder collaboration to ensure adherence to standards while balancing aesthetic and economic goals.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Experience 2 -->
-                        <div class="experience-item relative" data-index="1">
-                            <div
-                                class="absolute -left-8 top-0 w-4 h-4 rounded-full bg-white/20 border border-white/40 experience-dot">
-                            </div>
-                            <div class="pb-8">
-                                <span
-                                    class="text-sm text-white/40 mb-2 block">Aug 2026 - Dec 2026</span>
-                                <h3
-                                    class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-1">
-                                    Design Member – Vision 2030 Club</h3>
-                                <p class="text-white/60 text-base mb-4">King Saud University</p>
-                                <ul class="text-white/50 text-sm leading-relaxed space-y-2 list-disc pl-4">
-                                    <li>Collaborated with a multidisciplinary team to create architectural concepts and visual content aligned with Saudi Vision 2030.</li>
-                                    <li>Led student initiatives and delivered high-quality design solutions through creative problem-solving.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Experience 3 -->
-                        <div class="experience-item relative" data-index="2">
-                            <div
-                                class="absolute -left-8 top-0 w-4 h-4 rounded-full bg-white/20 border border-white/40 experience-dot">
-                            </div>
-                            <div class="pb-8">
-                                <span
-                                    class="text-sm text-white/40 mb-2 block">Freelance Projects</span>
-                                <h3
-                                    class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-1">
-                                    Freelance Architect & Designer</h3>
-                                <p class="text-white/60 text-base mb-4">Independent Private Clients</p>
-                                <ul class="text-white/50 text-sm leading-relaxed space-y-2 list-disc pl-4">
-                                    <li>Managed and delivered architectural design projects, handling concept creation, 3D modeling, and client presentations.</li>
-                                    <li>Applied practical knowledge of local building codes and user-centric design principles.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <!-- Right Column - Timeline -->
+          <div class="relative">
+            <!-- Timeline Line -->
+            <div
+              class="absolute left-0 top-0 bottom-0 w-px bg-white/10"
+              aria-hidden="true">
+              <div
+                class="timeline-progress absolute top-0 left-0 w-full bg-gradient-to-b from-white/60 to-white/20"
+                id="timeline-line"></div>
             </div>
+
+            <!-- Experience Items -->
+            <div class="space-y-12 pl-8">
+              <!-- Experience 1 -->
+              <div class="experience-item relative" data-index="0">
+                <div
+                  class="absolute -left-8 top-0 w-4 h-4 rounded-full bg-white/20 border border-white/40 experience-dot"></div>
+                <div class="pb-8">
+                  <span class="text-sm text-white/40 mb-2 block"
+                    >Oct 2023 - Jun 2025</span
+                  >
+                  <h3
+                    class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-1">
+                    Real Estate Development & Architecture
+                  </h3>
+                  <p class="text-white/60 text-base mb-4">
+                    Al-Woasta for Investment and Real Estate Development
+                  </p>
+                  <ul
+                    class="text-white/50 text-sm leading-relaxed space-y-2 list-disc pl-4">
+                    <li>
+                      Contributed to architectural planning and feasibility
+                      analysis of residential and commercial projects,
+                      optimizing investment value.
+                    </li>
+                    <li>
+                      Coordinated design execution and stakeholder collaboration
+                      to ensure adherence to standards while balancing aesthetic
+                      and economic goals.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Experience 2 -->
+              <div class="experience-item relative" data-index="1">
+                <div
+                  class="absolute -left-8 top-0 w-4 h-4 rounded-full bg-white/20 border border-white/40 experience-dot"></div>
+                <div class="pb-8">
+                  <span class="text-sm text-white/40 mb-2 block"
+                    >Aug 2025 - Dec 2025</span
+                  >
+                  <h3
+                    class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-1">
+                    Design Member – Vision 2030 Club
+                  </h3>
+                  <p class="text-white/60 text-base mb-4">
+                    King Saud University
+                  </p>
+                  <ul
+                    class="text-white/50 text-sm leading-relaxed space-y-2 list-disc pl-4">
+                    <li>
+                      Collaborated with a multidisciplinary team to create
+                      architectural concepts and visual content aligned with
+                      Saudi Vision 2030.
+                    </li>
+                    <li>
+                      Led student initiatives and delivered high-quality design
+                      solutions through creative problem-solving.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Experience 3 -->
+              <div class="experience-item relative" data-index="2">
+                <div
+                  class="absolute -left-8 top-0 w-4 h-4 rounded-full bg-white/20 border border-white/40 experience-dot"></div>
+                <div class="pb-8">
+                  <span class="text-sm text-white/40 mb-2 block"
+                    >Freelance Projects</span
+                  >
+                  <h3
+                    class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-1">
+                    Freelance Architect & Designer
+                  </h3>
+                  <p class="text-white/60 text-base mb-4">
+                    Independent Private Clients
+                  </p>
+                  <ul
+                    class="text-white/50 text-sm leading-relaxed space-y-2 list-disc pl-4">
+                    <li>
+                      Managed and delivered architectural design projects,
+                      handling concept creation, 3D modeling, and client
+                      presentations.
+                    </li>
+                    <li>
+                      Applied practical knowledge of local building codes and
+                      user-centric design principles.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education"
-        class="relative w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-white/2"
-        aria-label="Education">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-                <div>
-                    <span class="text-sm text-white/40 uppercase tracking-widest mb-4 block">Academic Background</span>
-                    <h2 class="font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8">
-                        Education
-                    </h2>
-                    <p class="text-white/50 text-lg max-w-md">
-                        My academic foundation in architecture and language studies.
-                    </p>
-                </div>
-                <div class="space-y-12">
-                    <!-- KSU -->
-                    <div class="education-item">
-                        <span class="text-sm text-white/40 mb-2 block">2021 – 2026</span>
-                        <h3 class="font-['Space_Grotesk'] text-2xl font-semibold mb-2">Bachelor of Architecture</h3>
-                        <p class="text-white/60 mb-2">King Saud University • Riyadh, Saudi Arabia</p>
-                    </div>
-                    <!-- Bell Cambridge -->
-                    <div class="education-item border-t border-white/10 pt-8">
-                        <span class="text-sm text-white/40 mb-2 block">2023 – 2025</span>
-                        <h3 class="font-['Space_Grotesk'] text-2xl font-semibold mb-2">Intensive English Language Program</h3>
-                        <p class="text-white/60">Bell Cambridge School • Cambridge, UK</p>
-                    </div>
-                </div>
+    <section
+      id="education"
+      class="relative w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-white/2"
+      aria-label="Education">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          <div>
+            <span
+              class="text-sm text-white/40 uppercase tracking-widest mb-4 block"
+              >Academic Background</span
+            >
+            <h2
+              class="font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8">
+              Education
+            </h2>
+            <p class="text-white/50 text-lg max-w-md">
+              My academic foundation in architecture and language studies.
+            </p>
+          </div>
+          <div class="space-y-12">
+            <!-- KSU -->
+            <div class="education-item">
+              <span class="text-sm text-white/40 mb-2 block">2021 – 2026</span>
+              <h3 class="font-['Space_Grotesk'] text-2xl font-semibold mb-2">
+                Bachelor of Architecture
+              </h3>
+              <p class="text-white/60 mb-2">
+                King Saud University • Riyadh, Saudi Arabia
+              </p>
             </div>
+            <!-- Bell Cambridge -->
+            <div class="education-item border-t border-white/10 pt-8">
+              <span class="text-sm text-white/40 mb-2 block">2023 – 2025</span>
+              <h3 class="font-['Space_Grotesk'] text-2xl font-semibold mb-2">
+                Intensive English Language Program
+              </h3>
+              <p class="text-white/60">Bell Cambridge School • Cambridge, UK</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Tools Ticker Section -->
-    <section id="tools" class="relative w-full py-16 md:py-24 overflow-hidden"
-        aria-label="Tools & Software">
-        <div class="mb-12 px-6 md:px-12 lg:px-20">
-            <span class="text-sm text-white/40 uppercase tracking-widest block">Toolkit</span>
-            <h2
-                class="experience-title font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 mt-6">
-                Tools & Software
-            </h2>
-        </div>
+    <section
+      id="tools"
+      class="relative w-full py-16 md:py-24 overflow-hidden"
+      aria-label="Tools & Software">
+      <div class="mb-12 px-6 md:px-12 lg:px-20">
+        <span class="text-sm text-white/40 uppercase tracking-widest block"
+          >Toolkit</span
+        >
+        <h2
+          class="experience-title font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 mt-6">
+          Tools & Software
+        </h2>
+      </div>
 
-        <!-- Ticker Container -->
-        <div class="ticker-container relative" aria-hidden="true">
-            <div class="ticker-track flex gap-12" id="ticker-track">
-                <!-- First Set of Items -->
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Revit</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">AutoCAD</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Photoshop</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">PowerPoint</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Excel</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Adobe Canva</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Lumion</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">D5 Render</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Rhino</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">SketchUp</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Office 365</span>
-                </div>
+      <!-- Ticker Container -->
+      <div class="ticker-container relative" aria-hidden="true">
+        <div class="ticker-track flex gap-12" id="ticker-track">
+          <!-- First Set of Items -->
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Revit</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >AutoCAD</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Photoshop</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >PowerPoint</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Excel</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Adobe</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Canva</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Lumion</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >D5 Render</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Rhino</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >SketchUp</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Office 365</span
+            >
+          </div>
 
-                <!-- Second Set of Items (Identical clone for seamless loop) -->
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Revit</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">AutoCAD</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Photoshop</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">PowerPoint</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Excel</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Adobe Canva</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Lumion</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">D5 Render</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Rhino</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">SketchUp</span>
-                </div>
-                <div class="ticker-item shrink-0 px-8">
-                    <span class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap">Office 365</span>
-                </div>
-            </div>
+          <!-- Second Set of Items (Identical clone for seamless loop) -->
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Revit</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >AutoCAD</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Photoshop</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >PowerPoint</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Excel</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Adobe Canva</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Lumion</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >D5 Render</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Rhino</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >SketchUp</span
+            >
+          </div>
+          <div class="ticker-item shrink-0 px-8">
+            <span
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white/20 hover:text-white/60 transition-colors duration-300 whitespace-nowrap"
+              >Office 365</span
+            >
+          </div>
         </div>
-        <!-- Specialized Skills -->
-        <div class="mt-20 px-6 md:px-12 lg:px-20 pb-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="skill-card p-6 rounded-2xl bg-white/5 border border-white/10 group hover:border-white/20 transition-all duration-300">
-                    <h3 class="font-['Space_Grotesk'] text-lg font-semibold mb-3 text-white group-hover:text-blue-400 transition-colors">Real Estate Development</h3>
-                    <p class="text-white/50 text-sm">Feasibility studies, HBU analysis, and market research for investment optimization.</p>
-                </div>
-                <div class="skill-card p-6 rounded-2xl bg-white/5 border border-white/10 group hover:border-white/20 transition-all duration-300">
-                    <h3 class="font-['Space_Grotesk'] text-lg font-semibold mb-3 text-white group-hover:text-blue-400 transition-colors">Technical Design</h3>
-                    <p class="text-white/50 text-sm">Expertise in Revit and BIM workflows for complex architectural planning.</p>
-                </div>
-                <div class="skill-card p-6 rounded-2xl bg-white/5 border border-white/10 group hover:border-white/20 transition-all duration-300">
-                    <h3 class="font-['Space_Grotesk'] text-lg font-semibold mb-3 text-white group-hover:text-blue-400 transition-colors">Investment Strategy</h3>
-                    <p class="text-white/50 text-sm">Balancing economic goals with design excellence to maximize project value.</p>
-                </div>
-                <div class="skill-card p-6 rounded-2xl bg-white/5 border border-white/10 group hover:border-white/20 transition-all duration-300">
-                    <h3 class="font-['Space_Grotesk'] text-lg font-semibold mb-3 text-white group-hover:text-blue-400 transition-colors">Vision 2030 Alliance</h3>
-                    <p class="text-white/50 text-sm">Committed to sustainable and innovative urban solutions in the Kingdom.</p>
-                </div>
-            </div>
+      </div>
+      <!-- Specialized Skills -->
+      <div class="mt-20 px-6 md:px-12 lg:px-20 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="skill-card p-6 rounded-2xl bg-white/5 border border-white/10 group hover:border-white/20 transition-all duration-300">
+            <h3
+              class="font-['Space_Grotesk'] text-lg font-semibold mb-3 text-white group-hover:text-blue-400 transition-colors">
+              Real Estate Development
+            </h3>
+            <p class="text-white/50 text-sm">
+              Feasibility studies, HBU analysis, and market research for
+              investment optimization.
+            </p>
+          </div>
+          <div
+            class="skill-card p-6 rounded-2xl bg-white/5 border border-white/10 group hover:border-white/20 transition-all duration-300">
+            <h3
+              class="font-['Space_Grotesk'] text-lg font-semibold mb-3 text-white group-hover:text-blue-400 transition-colors">
+              Technical Design
+            </h3>
+            <p class="text-white/50 text-sm">
+              Expertise in Revit and BIM workflows for complex architectural
+              planning.
+            </p>
+          </div>
+          <div
+            class="skill-card p-6 rounded-2xl bg-white/5 border border-white/10 group hover:border-white/20 transition-all duration-300">
+            <h3
+              class="font-['Space_Grotesk'] text-lg font-semibold mb-3 text-white group-hover:text-blue-400 transition-colors">
+              Investment Strategy
+            </h3>
+            <p class="text-white/50 text-sm">
+              Balancing economic goals with design excellence to maximize
+              project value.
+            </p>
+          </div>
+          <div
+            class="skill-card p-6 rounded-2xl bg-white/5 border border-white/10 group hover:border-white/20 transition-all duration-300">
+            <h3
+              class="font-['Space_Grotesk'] text-lg font-semibold mb-3 text-white group-hover:text-blue-400 transition-colors">
+              Vision 2030 Alliance
+            </h3>
+            <p class="text-white/50 text-sm">
+              Committed to sustainable and innovative urban solutions in the
+              Kingdom.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Selected Works Section -->
-    <section id="work"
-        class="relative w-full py-24 md:py-32 px-6 md:px-12 lg:px-20"
-        aria-label="Selected Works">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
-            <div class="mb-16 md:mb-24">
-                <span
-                    class="text-sm text-white/40 uppercase tracking-widest mb-4 block">Portfolio</span>
-                <h2
-                    class="work-title font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
-                    Selected Works
-                </h2>
-                <p class="text-white/50 text-lg max-w-xl">
-                    A curated collection of my best work, showcasing university
-                    projects and personal explorations in design and
-                    architecture.
-                </p>
-            </div>
-
-
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
-                id="projects-grid">
-                <!-- Project 1: Al-Murabba Orchestra -->
-                <a href="al-murabba-orchestra.html" class="block group">
-                    <article
-                        class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
-                        data-category="University Project">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="src/projects/Al-Murabba Orchestra-Featured.jpg"
-                                alt="Al-Murabba Orchestra - Crystalline Architecture Design"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                loading="lazy" decoding="async">
-                        </div>
-                        <div class="p-6 md:p-8">
-                            <span
-                                class="text-xs text-white/40 uppercase tracking-wider mb-3 block">University
-                                Project</span>
-                            <h3
-                                class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
-                                Al-Murabba Orchestra</h3>
-                            <p class="text-white/50 text-sm leading-relaxed">
-                                A groundbreaking cultural monument in New Murabba, Riyadh, featuring a 4,000-seat grand auditorium and a design inspired by the concept of "frozen music."
-                            </p>
-                        </div>
-                        <div
-                            class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300">
-                        </div>
-                    </article>
-                </a>
-
-                <!-- Project 2: Al Thumama Aviation Club -->
-                <a href="al-thumama-aviation-club.html" class="block group">
-                    <article
-                        class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
-                        data-category="University Project">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="src/projects/Al Thumama Aviation Club.jpg"
-                                alt="Al Thumama Aviation Club - Aviation Architecture Design"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                loading="lazy" decoding="async">
-                        </div>
-                        <div class="p-6 md:p-8">
-                            <span
-                                class="text-xs text-white/40 uppercase tracking-wider mb-3 block">University
-                                Project</span>
-                            <h3
-                                class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
-                                Al Thumama Aviation Club</h3>
-                            <p class="text-white/50 text-sm leading-relaxed">
-                                The Aviation Club in Riyadh is one of the leading centers for recreational and sports aviation activities in Saudi Arabia. Located at Thumamah Airport north of Riyadh, the club's design emerges from the rotational movement of an aircraft around its axis, transforming this dynamic maneuver into a curved and twisted architectural mass that embodies strength, elegance, and fluidity.
-                            </p>
-                        </div>
-                        <div
-                            class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300">
-                        </div>
-                    </article>
-                </a>
-
-                <!-- Project 3: College of Architecture and Arts -->
-                <a href="college-architecture-arts.html" class="block group">
-                    <article
-                        class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
-                        data-category="University Project">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="src/projects/College of Architecture and Arts.jpg"
-                                alt="College of Architecture and Arts - Educational Campus Design"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                loading="lazy" decoding="async">
-                        </div>
-                        <div class="p-6 md:p-8">
-                            <span
-                                class="text-xs text-white/40 uppercase tracking-wider mb-3 block">University
-                                Project</span>
-                            <h3
-                                class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
-                                College of Architecture and Arts</h3>
-                            <p class="text-white/50 text-sm leading-relaxed">
-                                As part of Vision 2030, the College of Architecture and Arts in Riyadh-Al-Quraine combines heritage and modernity through the "Infinity" design philosophy — a seamless, eternal loop where man, nature, and space coexist — nurturing creative generations to compete globally and support sustainable development.
-                            </p>
-                        </div>
-                        <div
-                            class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300">
-                        </div>
-                    </article>
-                </a>
-
-                <!-- Project 4: LucidAir -->
-                <a href="lucid-air.html" class="block group">
-                    <article
-                        class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
-                        data-category="Personal Project">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="src/projects/LucidAir.jpg"
-                                alt="LucidAir - Automotive Showroom Design"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                loading="lazy" decoding="async">
-                        </div>
-                        <div class="p-6 md:p-8">
-                            <span
-                                class="text-xs text-white/40 uppercase tracking-wider mb-3 block">Personal
-                                Project</span>
-                            <h3
-                                class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
-                                LucidAir</h3>
-                            <p class="text-white/50 text-sm leading-relaxed">
-                                A sophisticated multi-functional landmark serving as the Headquarters and Flagship Showroom for Lucid Motors on King Salman Road, Riyadh. Strategically backed by the Saudi Public Investment Fund (PIF), the building integrates high-end corporate workspaces with immersive gallery areas, designed around the "Aero-Light Continuity" concept.
-                            </p>
-                        </div>
-                        <div
-                            class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300">
-                        </div>
-                    </article>
-                </a>
-
-                <!-- Project 5: Majlis -->
-                <a href="majlis.html" class="block group">
-                    <article
-                        class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
-                        data-category="Residential Project">
-                        <div class="aspect-[4/3] overflow-hidden">
-                            <img src="src/projects/majlis.jpeg"
-                                alt="Majlis - Luxury Guest Wing"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                loading="lazy" decoding="async">
-                        </div>
-                        <div class="p-6 md:p-8">
-                            <span
-                                class="text-xs text-white/40 uppercase tracking-wider mb-3 block">Residential
-                                Project</span>
-                            <h3
-                                class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
-                                Majlis</h3>
-                            <p class="text-white/50 text-sm leading-relaxed">
-                                A premier hospitality suite designed for exclusive events and high-end privacy, featuring a grand private majlis for over 100 guests.
-                            </p>
-                        </div>
-                        <div
-                            class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300">
-                        </div>
-                    </article>
-                </a>
-
-
-            </div>
-
-            <!-- Future Projects Note -->
-            <div class="mt-16 text-center">
-                <p class="text-white/30 text-sm">
-                    More projects coming soon
-                </p>
-            </div>
+    <section
+      id="work"
+      class="relative w-full py-24 md:py-32 px-6 md:px-12 lg:px-20"
+      aria-label="Selected Works">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="mb-16 md:mb-24">
+          <span
+            class="text-sm text-white/40 uppercase tracking-widest mb-4 block"
+            >Portfolio</span
+          >
+          <h2
+            class="work-title font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
+            Selected Works
+          </h2>
+          <p class="text-white/50 text-lg max-w-xl">
+            A curated collection of my best work, showcasing university projects
+            and personal explorations in design and architecture.
+          </p>
         </div>
+
+        <!-- Projects Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
+          id="projects-grid">
+          <!-- Project 1: Al-Murabba Orchestra -->
+          <a href="al-murabba-orchestra.html" class="block group">
+            <article
+              class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
+              data-category="Graduation Project">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  src="src/projects/Al-Murabba Orchestra-Featured.jpg"
+                  alt="Al-Murabba Orchestra - Crystalline Architecture Design"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async" />
+              </div>
+              <div class="p-6 md:p-8">
+                <span
+                  class="text-xs text-white/40 uppercase tracking-wider mb-3 block"
+                  >University Project</span
+                >
+                <h3
+                  class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
+                  Al-Murabba Orchestra
+                </h3>
+                <p class="text-white/50 text-sm leading-relaxed">
+                  A groundbreaking cultural monument in New Murabba, Riyadh,
+                  featuring a 4,000-seat grand auditorium and a design inspired
+                  by the concept of "frozen music."
+                </p>
+              </div>
+              <div
+                class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300"></div>
+            </article>
+          </a>
+
+          <!-- Project 2: Al Thumama Aviation Club -->
+          <a href="al-thumama-aviation-club.html" class="block group">
+            <article
+              class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
+              data-category="Graduation Project">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  src="src/projects/Al Thumama Aviation Club.jpg"
+                  alt="Al Thumama Aviation Club - Aviation Architecture Design"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async" />
+              </div>
+              <div class="p-6 md:p-8">
+                <span
+                  class="text-xs text-white/40 uppercase tracking-wider mb-3 block"
+                  >University Project</span
+                >
+                <h3
+                  class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
+                  Al Thumama Aviation Club
+                </h3>
+                <p class="text-white/50 text-sm leading-relaxed">
+                  One of the leading centers for recreational and sports
+                  aviation in Saudi Arabia, located at Thumamah Airport north of
+                  Riyadh, promoting aviation culture through training courses,
+                  interactive activities, and services for private aircraft and
+                  hobbyists.
+                </p>
+              </div>
+              <div
+                class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300"></div>
+            </article>
+          </a>
+
+          <!-- Project 3: College of Architecture and Arts -->
+          <a href="college-architecture-arts.html" class="block group">
+            <article
+              class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
+              data-category="Graduation Project">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  src="src/projects/College of Architecture and Arts.jpg"
+                  alt="College of Architecture and Arts - Educational Campus Design"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async" />
+              </div>
+              <div class="p-6 md:p-8">
+                <span
+                  class="text-xs text-white/40 uppercase tracking-wider mb-3 block"
+                  >University Project</span
+                >
+                <h3
+                  class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
+                  College of Architecture and Arts
+                </h3>
+                <p class="text-white/50 text-sm leading-relaxed">
+                  A Vision 2030 initiative in Riyadh combining heritage and
+                  modernity through the "Infinity" design philosophy, preparing
+                  creative generations to compete globally and strengthening the
+                  Kingdom's position as a center for creativity and design.
+                </p>
+              </div>
+              <div
+                class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300"></div>
+            </article>
+          </a>
+
+          <!-- Project 4: LucidAir -->
+          <a href="lucid-air.html" class="block group">
+            <article
+              class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
+              data-category="Personal Project">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  src="src/projects/LucidAir.jpg"
+                  alt="LucidAir - Automotive Showroom Design"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async" />
+              </div>
+              <div class="p-6 md:p-8">
+                <span
+                  class="text-xs text-white/40 uppercase tracking-wider mb-3 block"
+                  >Personal Project</span
+                >
+                <h3
+                  class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
+                  LucidAir
+                </h3>
+                <p class="text-white/50 text-sm leading-relaxed">
+                  A sophisticated multi-functional landmark serving as the
+                  Headquarters and Flagship Showroom for Lucid Motors,
+                  strategically backed by the Saudi Public Investment Fund (PIF)
+                  and integrating high-end corporate workspaces with immersive
+                  gallery areas.
+                </p>
+              </div>
+              <div
+                class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300"></div>
+            </article>
+          </a>
+
+          <!-- Project 5: Majlis -->
+          <a href="majlis.html" class="block group">
+            <article
+              class="project-card group relative overflow-hidden rounded-2xl bg-white/5 h-full"
+              data-category="Residential Project">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  src="src/projects/majlis.jpeg"
+                  alt="Majlis - Luxury Guest Wing"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async" />
+              </div>
+              <div class="p-6 md:p-8">
+                <span
+                  class="text-xs text-white/40 uppercase tracking-wider mb-3 block"
+                  >Residential Project</span
+                >
+                <h3
+                  class="font-['Space_Grotesk'] text-xl md:text-2xl font-semibold mb-2 group-hover:text-white transition-colors">
+                  Majlis
+                </h3>
+                <p class="text-white/50 text-sm leading-relaxed">
+                  A premier hospitality suite designed for exclusive events and
+                  high-end privacy, featuring a Grand Private Majlis for over
+                  100 guests, luxury bedrooms, a professional catering kitchen,
+                  and a grand dining hall for formal banquets.
+                </p>
+              </div>
+              <div
+                class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none group-hover:border-white/20 transition-colors duration-300"></div>
+            </article>
+          </a>
+        </div>
+
+        <!-- Future Projects Note -->
+        <div class="mt-16 text-center">
+          <p class="text-white/30 text-sm">More projects coming soon</p>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact"
-        class="relative w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 border-t border-white/10"
-        aria-label="Contact">
-        <div class="max-w-7xl mx-auto">
-            <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <!-- Name/Brand -->
-                <div class="lg:col-span-2">
-                    <h3
-                        class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold mb-4">
-                        Omair Al-Qahtani</h3>
-                    <p class="text-white/50 max-w-md">
-                        Creating meaningful spaces and visual experiences
-                        through thoughtful design and innovative architecture.
-                    </p>
-                </div>
+    <footer
+      id="contact"
+      class="relative w-full py-24 md:py-32 px-6 md:px-12 lg:px-20 border-t border-white/10"
+      aria-label="Contact">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <!-- Name/Brand -->
+          <div class="lg:col-span-2">
+            <h3
+              class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold mb-4">
+              Omair Al-Qahtani
+            </h3>
+            <p class="text-white/50 max-w-md">
+              Creating meaningful spaces and visual experiences through
+              thoughtful design and innovative architecture.
+            </p>
+          </div>
 
-                <!-- Contact Info -->
-                <div>
-                    <h4
-                        class="text-sm text-white/40 uppercase tracking-wider mb-6">
-                        Contact</h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <span class="text-white/70 text-sm">Riyadh, Saudi
-                                Arabia</span>
-                        </li>
-                        <li>
-                            <a href="mailto:Omairalrooq@outlook.com"
-                                class="text-white/70 hover:text-white transition-colors duration-300 text-sm">
-                                Omairalrooq@outlook.com
-                            </a>
-                        </li>
-                        <li>
-                            <a href="tel:+966532101058"
-                                class="text-white/70 hover:text-white transition-colors duration-300 text-sm">
-                                +966 53 210 1058
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-sm text-white/40 uppercase tracking-wider mb-6">
+              Contact
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <span class="text-white/70 text-sm">Riyadh, Saudi Arabia</span>
+              </li>
+              <li>
+                <a
+                  href="mailto:Omairalrooq@outlook.com"
+                  class="text-white/70 hover:text-white transition-colors duration-300 text-sm">
+                  Omairalrooq@outlook.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+966532101058"
+                  class="text-white/70 hover:text-white transition-colors duration-300 text-sm">
+                  +966 53 210 1058
+                </a>
+              </li>
+            </ul>
+          </div>
 
-                <!-- Social -->
-                <div>
-                    <h4
-                        class="text-sm text-white/40 uppercase tracking-wider mb-6">
-                        Connect</h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.linkedin.com/in/omair-alqahtani-18bb252a7/" target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-white/70 hover:text-white transition-colors duration-300 text-sm inline-flex items-center gap-2">
-                                <i data-lucide="linkedin" class="w-4 h-4"></i>
-                                Omair Al-Qahtani
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://behance.net" target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-white/70 hover:text-white transition-colors duration-300 text-sm inline-flex items-center gap-2">
-                                <i data-lucide="globe" class="w-4 h-4"></i>
-                                Behance
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://instagram.com" target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-white/70 hover:text-white transition-colors duration-300 text-sm inline-flex items-center gap-2">
-                                <i data-lucide="instagram" class="w-4 h-4"></i>
-                                Instagram
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div
-                class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-white/30 text-xs">
-                    © 2024 Omair Al-Qahtani. All rights reserved.
-                </p>
-                <p class="text-white/30 text-xs">
-                    Designed & Built with passion
-                </p>
-            </div>
+          <!-- Social -->
+          <div>
+            <h4 class="text-sm text-white/40 uppercase tracking-wider mb-6">
+              Connect
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/omair-alqahtani-18bb252a7/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white/70 hover:text-white transition-colors duration-300 text-sm inline-flex items-center gap-2">
+                  <i data-lucide="linkedin" class="w-4 h-4"></i>
+                  Omair Al-Qahtani
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Copyright -->
+        <div
+          class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-white/30 text-xs">
+            © 2026 Omair Al-Qahtani. All rights reserved.
+          </p>
+          <p class="text-white/30 text-xs">Designed & Built with passion</p>
+        </div>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>
